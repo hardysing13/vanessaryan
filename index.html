@@ -249,19 +249,14 @@
     </nav>
 
     <!-- Hero Section -->
+    <!-- Hero Section -->
     <section class="hero" id="home">
-        <!-- Replace with Timeline 1.mov -->
-        <video autoplay muted loop playsinline>
-            <!-- Mobile phones (portrait) -->
-            <source src="hero-mobile.mp4" type="video/mp4" media="(max-width: 767px)">
-
-            <!-- Tablets & desktops (landscape 16:9) -->
-            <source src="hero-video.mp4" type="video/mp4" media="(min-width: 768px)">
-
+        <video id="hero-video" autoplay muted loop playsinline preload="auto" poster="hero-poster.jpg">
+            <!-- The source will be set by the script below -->
             Your browser does not support the video tag.
         </video>
         <div class="hero-content">
-            <h1></h1>
+            <h1>Vanessa Ryan</h1>
         </div>
     </section>
 
@@ -324,6 +319,28 @@
                 nav.style.background = 'linear-gradient(to bottom, rgba(253,251,247,0.8), transparent)';
             }
         });
+    </script>
+
+    <script>
+        function loadHeroVideo() {
+            const video = document.getElementById('hero-video');
+            const isMobile = window.innerWidth <= 768;
+            
+            // Choose the file based on screen width
+            const videoSrc = isMobile ? 'hero-mobile.mp4' : 'hero-video.mp4';
+            
+            // Only set the source if it's different to prevent reloading on resize
+            if (video.getAttribute('src') !== videoSrc) {
+                video.src = videoSrc;
+                video.load();
+            }
+        }
+    
+        // Run on page load
+        loadHeroVideo();
+    
+        // Optional: Re-check if user rotates phone or resizes window
+        window.addEventListener('resize', loadHeroVideo);
     </script>
 </body>
 
