@@ -85,6 +85,22 @@
             z-index: -1;
         }
 
+        /* Default: desktop + iPad */
+        .hero-mobile {
+            display: none;
+        }
+
+        /* Phones only */
+        @media (max-width: 767px) {
+            .hero-desktop {
+            display: none;
+            }
+
+        .hero-mobile {
+            display: block;
+            }
+        }
+
         .hero-content h1 {
             font-family: var(--font-serif);
             font-size: 4rem;
