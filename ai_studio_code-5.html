@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vanessa Ryan | Bespoke Atelier</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #fdfbf7;
+            --text-color: #1a1a1a;
+            --accent-color: #a6926d;
+            /* The gold/tan from your mockup */
+            --font-serif: 'Playfair Display', serif;
+            --font-sans: 'Lato', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-sans);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding: 30px;
+            z-index: 1000;
+            background: linear-gradient(to bottom, rgba(253, 251, 247, 0.8), transparent);
+            transition: background 0.3s ease;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-color);
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 2px;
+            font-weight: 400;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .hero-content h1 {
+            font-family: var(--font-serif);
+            font-size: 4rem;
+            color: white;
+            text-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            font-weight: 400;
+        }
+
+        /* Philosophy Text Section */
+        .philosophy {
+            padding: 100px 20px;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .philosophy h2 {
+            font-family: var(--font-serif);
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+
+        .philosophy p {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: #555;
+        }
+
+        /* 9:16 Image Gallery */
+        .gallery {
+            padding: 50px 4%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .gallery-item {
+            aspect-ratio: 9 / 16;
+            background-color: #eee;
+            overflow: hidden;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Atelier Video Section */
+        .atelier-section {
+            padding: 100px 0;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .atelier-container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .atelier-video-wrap {
+            width: 100%;
+            margin-bottom: 40px;
+        }
+
+        .atelier-video-wrap video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Inquiry Section */
+        .inquiry {
+            padding: 100px 20px;
+            background-color: var(--bg-color);
+            text-align: center;
+        }
+
+        .btn-appointment {
+            display: inline-block;
+            padding: 15px 40px;
+            background-color: var(--accent-color);
+            color: white;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 13px;
+            margin-top: 30px;
+            transition: opacity 0.3s;
+        }
+
+        .btn-appointment:hover {
+            opacity: 0.8;
+        }
+
+        footer {
+            padding: 50px;
+            text-align: center;
+            font-size: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-top: 1px solid #eee;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 15px;
+            }
+
+            nav a {
+                font-size: 10px;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .philosophy h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#bridal">Bridal Wear</a></li>
+            <li><a href="#inquire">Inquiry</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <!-- Replace with Timeline 1.mov -->
+        <video autoplay muted loop playsinline>
+            <source src="hero-video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-content">
+            <h1></h1>
+        </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section class="philosophy">
+        <h2>Made When Chosen</h2>
+        <p>Vanessa Ryan produces no ready-to-wear.<br>
+            Each piece begins with a conversation.<br>
+            Nothing exists until it is chosen.</p>
+    </section>
+
+    <!-- 9:16 Gallery Section -->
+    <section class="gallery" id="bridal">
+        <div class="gallery-item">
+            <img src="image1.jpg" alt="Bridal Gown 1">
+        </div>
+        <div class="gallery-item">
+            <img src="image2.jpg" alt="Bridal Gown 2">
+        </div>
+        <div class="gallery-item">
+            <img src="image3.jpg" alt="Bridal Gown 3">
+        </div>
+    </section>
+
+    <!-- Atelier Video Section -->
+    <section class="atelier-section" id="about">
+        <div class="atelier-container">
+            <div class="atelier-video-wrap">
+                <!-- Replace with Atelier.mov -->
+                <video autoplay muted loop playsinline>
+                    <source src="atelier-video.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="philosophy">
+                <h2>The Atelier</h2>
+                <p>A space where time is the only measure. Every stitch is a testament to the relationship between the
+                    maker and the wearer.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Appointment Section -->
+    <section class="inquiry" id="inquire">
+        <h2>Wedding commissions are limited.</h2>
+        <p>To begin your journey, request a private appointment.</p>
+        <a href="mailto:appointments@vanessaryan.com" class="btn-appointment">Request an Appointment</a>
+    </section>
+
+    <footer>
+        &copy; 2024 Vanessa Ryan Bespoke Atelier
+    </footer>
+
+    <script>
+        // Simple scroll effect for Nav
+        window.addEventListener('scroll', function () {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.style.background = 'rgba(253, 251, 247, 0.95)';
+            } else {
+                nav.style.background = 'linear-gradient(to bottom, rgba(253,251,247,0.8), transparent)';
+            }
+        });
+    </script>
+</body>
+
+</html>
